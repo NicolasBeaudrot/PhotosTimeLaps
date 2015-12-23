@@ -1,0 +1,8 @@
+﻿<div class="jumbotron">
+    <h1>Latest photo</h1>
+    <li ng-repeat="photo in vm.photos" class="list-group-item">
+        <div style="height: 150px; width: 150px; margin-bottom: 5px;">
+            <img ng-src="album/{{photo.name}}" style="max-height: 150px" class="img-responsive" alt="alt:{{photo.name}}" />
+        </div>
+    </li>
+</div>
