@@ -45,7 +45,7 @@ namespace PhotosTimeLaps.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.GetBaseException().Message);
+                return BadRequest(ex.StackTrace);
             }
             
         }
