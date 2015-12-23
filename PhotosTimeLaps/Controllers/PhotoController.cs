@@ -15,7 +15,6 @@ namespace PhotosTimeLaps.Controllers
         public PhotoController()
             : this(new LocalPhotoManager(System.Web.Hosting.HostingEnvironment.MapPath("~/Album")))
         {
-            throw new NotSupportedException("Crash NICO");
         }
 
         public PhotoController(IPhotoManager photoManager)
@@ -33,7 +32,7 @@ namespace PhotosTimeLaps.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.StackTrace);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -53,7 +52,7 @@ namespace PhotosTimeLaps.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.StackTrace);
+                return BadRequest(ex.Message);
             }
             
         }

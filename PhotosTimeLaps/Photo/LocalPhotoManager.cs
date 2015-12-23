@@ -103,7 +103,7 @@ namespace PhotosTimeLaps.Photo
         {            
             if (!Directory.Exists(this.workingFolder))
             {
-                throw new ArgumentException("the destination path " + this.workingFolder + " could not be found");
+                //throw new ArgumentException("the destination path " + this.workingFolder + " could not be found");
             }
         }
     }
