@@ -25,8 +25,15 @@ namespace PhotosTimeLaps.Controllers
         // GET: api/Photo
         public async Task<IHttpActionResult> Get()
         {
-            var results = await _photoManager.Get();
-            return Ok(new { photos = results });
+            try
+            {
+                var results = await _photoManager.Get();
+                return Ok(new {photos = results});
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.StackTrace);
+            }
         }
 
         // POST: api/Photo
