@@ -13,7 +13,7 @@ namespace PhotosTimeLaps.Controllers
         private readonly IPhotoManager _photoManager;
 
         public PhotoController()
-            : this(new LocalPhotoManager(HttpRuntime.AppDomainAppPath + @"\Album"))
+            : this(new LocalPhotoManager(Server.MapPath("~/Album"))
         {            
         }
 
