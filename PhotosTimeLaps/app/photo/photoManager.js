@@ -10,6 +10,7 @@
     function photoManager($q, photoManagerClient, appInfo) {
         var service = {
             photos: [],
+            photosGallery: [],
             load: load,
             upload: upload,
             remove: remove,
@@ -25,14 +26,16 @@
             appInfo.setInfo({ busy: true, message: "loading photos" });
             
             service.photos.length = 0;
+            service.photosGallery.length = 0;
 
             return photoManagerClient.query()
                                 .$promise
                                 .then(function (result) {                                    
                                     result.photos
                                             .forEach(function (photo) {
-                                                    service.photos.push(photo);
-                                                });
+                                                service.photos.push(photo);
+                                                service.photosGallery.push({ thumb: "Album/" + photo.name, img: "Album/" + photo.name });
+                                    });
 
                                     appInfo.setInfo({message: "photos loaded successfully"});
 
@@ -66,6 +69,7 @@
                                                 result.photos.forEach(function (photo) {
                                                     if (!photoExists(photo.name)) {
                                                         service.photos.push(photo);
+                                                        service.photosGallery.push({ thumb: "Album/" + photo.name, img: "Album/" + photo.name });
                                                     }
                                                 });
                                             }
@@ -110,7 +114,7 @@
         }
 
         function photoExists(photoName) {
-            var res = false
+            var res = false;
             service.photos.forEach(function (photo) {
                 if (photo.name === photoName) {
                     res = true;

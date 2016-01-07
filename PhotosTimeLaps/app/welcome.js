@@ -9,9 +9,8 @@
 
     function welcome(photoManager) {
         var vm = this;
-        vm.photos = photoManager.photos;
-        vm.previewPhoto;
-
+        vm.photosGallery = photoManager.photosGallery;
+        
         activate();
 
         function activate() {

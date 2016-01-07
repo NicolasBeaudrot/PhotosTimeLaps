@@ -17,6 +17,7 @@ namespace PhotosTimeLaps
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-resource.js",
                         "~/Scripts/angular-route.js",
+                        "~/Scripts/ngGallery.js",
                         "~/app/app.js",
                         "~/app/appInfo.js",
                         "~/app/welcome.js",
@@ -25,8 +26,8 @@ namespace PhotosTimeLaps
                         "~/app/photo/photos.js",
                         "~/app/photo/photoManager.js",
                         "~/app/photo/egAddPhoto.js",
-                        "~/app/photo/egFiles.js",
                         "~/app/photo/egUpload.js",
+                        "~/app/photo/egFiles.js",
                         "~/app/photo/egPhotoUploader.js",
                         "~/app/photo/photoManagerClient.js")); 
 
@@ -42,7 +43,8 @@ namespace PhotosTimeLaps
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/ngGallery.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

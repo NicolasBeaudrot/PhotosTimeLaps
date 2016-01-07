@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var app = angular.module('app', ['ngResource','ngRoute','app.photo']);
+    var app = angular.module('app', ['ngResource', 'ngRoute', 'app.photo', 'jkuri.gallery']);
 
     app.config(['$routeProvider', function ($routeProvider) {        
 
@@ -21,8 +21,7 @@
             redirectTo: '/welcome'
         });
     }]);
-
-
+    
     // Handle routing errors and success events
     app.run([function () {        
     }]);
