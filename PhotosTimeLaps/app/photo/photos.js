@@ -10,7 +10,7 @@
     function photos(photoManager) {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'photo manager';
+        vm.title = 'Gestion des photos';
         vm.photos = photoManager.photos;
         vm.uploading = false;
         vm.previewPhoto;        
