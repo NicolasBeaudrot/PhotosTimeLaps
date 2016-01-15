@@ -34,7 +34,8 @@
                                     result.photos
                                             .forEach(function (photo) {
                                                 service.photos.push(photo);
-                                                service.photosGallery.push({ thumb: "Album/" + photo.name, img: "Album/" + photo.name });
+                                                var photoDate = new Date(Date.parse(photo.created));
+                                                service.photosGallery.push({ thumb: "Album/" + photo.name, img: "Album/" + photo.name, description: "Date: " + photoDate.getDate() + "/" + photoDate.getMonth() + "/" + photoDate.getFullYear() });
                                     });
 
                                     appInfo.setInfo({message: "photos loaded successfully"});
